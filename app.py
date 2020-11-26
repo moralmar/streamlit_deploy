@@ -18,7 +18,7 @@ import shap
 
 # DATA_PATH_ABS = r"D:\\c-square\\data\\Reporting\Heatmaps\\WMCH2019\\"  # <-- old
 DATA_PATH_ABS = "../streamlitapp/"
-FILE_NAME = 'data_ready_to_predict.xlsx'
+FILE_NAME = 'https://github.com/moralmar/streamlit_deploy/raw/master/data_ready_to_predict.xlsx'  # 'data_ready_to_predict.xlsx'
 COL_TO_PREDICT = 'SATIS_1_top2'
 suffix_top2 = 'top2'
 
@@ -37,7 +37,7 @@ def helper_read_excel(path):
 
 
 data_load_state.text("Done!")
-data = helper_read_excel(path=os.path.join(DATA_PATH_ABS, FILE_NAME))
+data = helper_read_excel(FILE_NAME)  # path=os.path.join(DATA_PATH_ABS, FILE_NAME)
 data_load_state.text("Done! (using st.cache)")
 
 cols_transformed = []
